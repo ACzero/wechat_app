@@ -1,3 +1,5 @@
+require 'rest-client'
+
 module WechatApp
   module Login
     class Code2SessionInfoError < StandardError; end
@@ -17,10 +19,7 @@ module WechatApp
         if res['errcode'].present?
           raise Code2SessionInfoError.new("get session info fail: #{res}")
         else
-          {
-            openid: res['openid'],
-            session_key: res['session_key']
-          }
+          res
         end
       end
     end
