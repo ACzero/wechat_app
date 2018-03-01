@@ -1,5 +1,6 @@
-require "wechat_app/version"
+require 'wechat_app/version'
+require 'wechat_app/login'
+require 'wechat_app/user_info.rb'
 
 module WechatApp
-  # Your code goes here...
 end
