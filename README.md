@@ -50,20 +50,21 @@ WechatApp::UserInfo.data_valid?('raw_data', 'session_key'', 'signature'')
 ``` ruby
 
 WechatApp::UserInfo.decrypt_data('encrypted_data', 'session_key', 'iv')
-# =>{
-#    	"openId": "OPENID",
-#    	"nickName": "NICKNAME",
-#    	"gender": GENDER,
-#    	"city": "CITY",
-#    	"province": "PROVINCE",
-#    	"country": "COUNTRY",
-#    	"avatarUrl": "AVATARURL",
-#    	"unionId": "UNIONID",
-#    	"watermark":
-#    	{
-#       	"appid":"APPID",
-#        	"timestamp":TIMESTAMP
-#    	}
+#=>
+#{
+#    "openId": "OPENID",
+#    "nickName": "NICKNAME",
+#    "gender": GENDER,
+#    "city": "CITY",
+#    "province": "PROVINCE",
+#    "country": "COUNTRY",
+#    "avatarUrl": "AVATARURL",
+#    "unionId": "UNIONID",
+#    "watermark":
+#    {
+#		"appid":"APPID",
+#		"timestamp":TIMESTAMP
+#    }
 #}
 
 ```
