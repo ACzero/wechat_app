@@ -1,28 +1,72 @@
 # WechatApp
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/wechat_app`. To experiment with that code, run `bin/console` for an interactive prompt.
+[微信小程序](https://mp.weixin.qq.com/debug/wxadoc/dev/api/api-login.html)相关API库
 
-TODO: Delete this and the text above, and describe your gem
+## 安装
 
-## Installation
-
-Add this line to your application's Gemfile:
+在Gemfile中添加:
 
 ```ruby
 gem 'wechat_app'
 ```
 
-And then execute:
+然后运行:
 
     $ bundle
 
-Or install it yourself as:
+或者:
 
     $ gem install wechat_app
 
-## Usage
+## 使用
 
-TODO: Write usage instructions here
+### code 换取 session_key
+
+参考文档: https://mp.weixin.qq.com/debug/wxadoc/dev/api/api-login.html#wxloginobject
+
+```ruby
+
+WechatApp::Login.code2session_info('code', 'appid', 'appsecret')
+# 具体返回结构参考微信文档
+# => { "openid": "openid", "session_key": "session_key" }
+
+```
+
+### 用户数据的签名验证和加解密
+
+参考文档: https://mp.weixin.qq.com/debug/wxadoc/dev/api/signature.html
+
+#### 数据签名校验
+
+``` ruby
+
+WechatApp::UserInfo.data_valid?(raw_data, session_key, signature)
+# => true
+
+```
+
+#### 加密数据解密(获取用户信息)
+
+``` ruby
+
+WechatApp::UserInfo.decrypt_data(encrypted_data, session_key, iv)
+# =>{
+#    	"openId": "OPENID",
+#    	"nickName": "NICKNAME",
+#    	"gender": GENDER,
+#    	"city": "CITY",
+#    	"province": "PROVINCE",
+#    	"country": "COUNTRY",
+#    	"avatarUrl": "AVATARURL",
+#    	"unionId": "UNIONID",
+#    	"watermark":
+#    	{
+#       	"appid":"APPID",
+#        	"timestamp":TIMESTAMP
+#    	}
+#	}
+
+```
 
 ## Development
 
