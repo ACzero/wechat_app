@@ -1,4 +1,3 @@
-
 lib = File.expand_path("../lib", __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require "wechat_app/version"
@@ -10,14 +9,12 @@ Gem::Specification.new do |spec|
   spec.email         = ["lzh.scut@hotmail.com"]
 
   spec.summary       = %q{Library for wechat application(微信小程序) API}
-  spec.description   = %q{Library for wechat application(微信小程序) API}
-  spec.homepage      = "TODO: Put your gem's website or public repo URL here."
+  spec.description   = %q{Library for wechat application(微信小程序) API, wechat docs: https://mp.weixin.qq.com/debug/wxadoc/dev/api/api-login.html}
+  spec.homepage      = "https://github.com/ACzero/wechat_app"
 
   spec.files         = `git ls-files -z`.split("\x0").reject do |f|
     f.match(%r{^(test|spec|features)/})
   end
-  spec.bindir        = "exe"
-  spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
   spec.require_paths = ["lib"]
 
   spec.add_dependency "rest-client", "~> 2.0"
