@@ -40,7 +40,7 @@ WechatApp::Login.code2session_info('code', 'appid', 'appsecret')
 
 ``` ruby
 
-WechatApp::UserInfo.data_valid?(raw_data, session_key, signature)
+WechatApp::UserInfo.data_valid?('raw_data', 'session_key'', 'signature'')
 # => true
 
 ```
@@ -49,7 +49,7 @@ WechatApp::UserInfo.data_valid?(raw_data, session_key, signature)
 
 ``` ruby
 
-WechatApp::UserInfo.decrypt_data(encrypted_data, session_key, iv)
+WechatApp::UserInfo.decrypt_data('encrypted_data', 'session_key', 'iv')
 # =>{
 #    	"openId": "OPENID",
 #    	"nickName": "NICKNAME",
@@ -64,7 +64,7 @@ WechatApp::UserInfo.decrypt_data(encrypted_data, session_key, iv)
 #       	"appid":"APPID",
 #        	"timestamp":TIMESTAMP
 #    	}
-#	}
+#}
 
 ```
 
