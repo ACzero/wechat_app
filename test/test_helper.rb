@@ -3,4 +3,4 @@ require "wechat_app"
 
 require "minitest/autorun"
 
-require 'webmock/test_unit'
+require 'webmock/minitest'

@@ -4,9 +4,9 @@ module WechatApp
   module Login
     class Code2SessionInfoError < StandardError; end
 
-    class << self
-      SESSION_KEY_URL = "https://api.weixin.qq.com/sns/jscode2session"
+    SESSION_KEY_URL = "https://api.weixin.qq.com/sns/jscode2session"
 
+    class << self
       def code2session_info(code, wxa_appid, wxa_secret)
         req_params = {
           appid: wxa_appid,
@@ -16,10 +16,10 @@ module WechatApp
         }
 
         res = JSON.parse(RestClient.get(SESSION_KEY_URL, { params: req_params }))
-        if res['errcode'].present?
-          raise Code2SessionInfoError.new("get session info fail: #{res}")
-        else
+        if res['errcode'].nil?
           res
+        else
+          raise Code2SessionInfoError.new("get session info fail: #{res}")
         end
       end
     end
