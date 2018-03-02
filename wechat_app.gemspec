@@ -8,7 +8,7 @@ Gem::Specification.new do |spec|
   spec.authors       = ["aczero"]
   spec.email         = ["lzh.scut@hotmail.com"]
 
-  spec.summary       = %q{Library for wechat application(微信小程序) API}
+  spec.summary       = %q{Library for wechat application API}
   spec.description   = %q{Library for wechat application(微信小程序) API, wechat docs: https://mp.weixin.qq.com/debug/wxadoc/dev/api/api-login.html}
   spec.homepage      = "https://github.com/ACzero/wechat_app"
 
