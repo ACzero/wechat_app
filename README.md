@@ -62,8 +62,8 @@ WechatApp::UserInfo.decrypt_data('encrypted_data', 'session_key', 'iv')
 #    "unionId": "UNIONID",
 #    "watermark":
 #    {
-#		"appid":"APPID",
-#		"timestamp":TIMESTAMP
+#        "appid":"APPID",
+#        "timestamp":TIMESTAMP
 #    }
 #}
 
